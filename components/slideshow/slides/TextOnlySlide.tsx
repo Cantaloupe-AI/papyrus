@@ -1,5 +1,6 @@
 import type { TextOnlySlideConfig } from "@/lib/slideshow/configs/TextOnlySlideConfig";
 import { BulletList } from "@/components/slideshow/BulletList";
+import { IconCardGrid } from "@/components/slideshow/IconCardGrid";
 
 interface TextOnlySlideProps {
   config: TextOnlySlideConfig;
@@ -28,6 +29,9 @@ export function TextOnlySlide({ config }: TextOnlySlideProps) {
           bullets={config.bullets}
           className="mt-6 max-w-2xl space-y-3 text-xl text-zinc-700 dark:text-zinc-300"
         />
+      )}
+      {config.iconCards && config.iconCards.length > 0 && (
+        <IconCardGrid iconCards={config.iconCards} className="mt-8" />
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import { SlideType, type BulletPoint, type TextOnlyContent } from "../types";
+import { SlideType, type BulletPoint, type IconCard, type TextOnlyContent } from "../types";
 import { SlideConfig } from "./SlideConfig";
 
 interface TextOnlySlideOptions extends TextOnlyContent {
@@ -13,6 +13,7 @@ export class TextOnlySlideConfig extends SlideConfig {
   readonly body?: string;
   readonly bodyWhispered?: boolean;
   readonly bullets?: BulletPoint[];
+  readonly iconCards?: IconCard[];
 
   constructor(options: TextOnlySlideOptions = {}) {
     super({ backgroundColor: options.backgroundColor, notes: options.notes });
@@ -21,6 +22,7 @@ export class TextOnlySlideConfig extends SlideConfig {
     this.body = options.body;
     this.bodyWhispered = options.bodyWhispered;
     this.bullets = options.bullets;
+    this.iconCards = options.iconCards;
   }
 
   toJSON(): Record<string, unknown> {
@@ -33,6 +35,7 @@ export class TextOnlySlideConfig extends SlideConfig {
       subheader: this.subheader,
       body: this.body,
       bullets: this.bullets,
+      iconCards: this.iconCards,
     };
   }
 }

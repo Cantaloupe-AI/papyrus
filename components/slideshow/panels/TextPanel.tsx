@@ -1,5 +1,6 @@
 import type { TextPanelContent } from "@/lib/slideshow/configs/panels/TextPanelContent";
 import { BulletList } from "@/components/slideshow/BulletList";
+import { IconCardGrid } from "@/components/slideshow/IconCardGrid";
 
 interface TextPanelProps {
   content: TextPanelContent;
@@ -28,6 +29,9 @@ export function TextPanel({ content }: TextPanelProps) {
           bullets={content.bullets}
           className="mt-4 space-y-2 text-lg text-zinc-700 dark:text-zinc-300"
         />
+      )}
+      {content.iconCards && content.iconCards.length > 0 && (
+        <IconCardGrid iconCards={content.iconCards} className="mt-6" />
       )}
     </div>
   );

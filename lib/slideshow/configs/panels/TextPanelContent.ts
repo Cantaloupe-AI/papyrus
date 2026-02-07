@@ -1,4 +1,4 @@
-import { PanelContentType, type BulletPoint, type TextOnlyContent } from "../../types";
+import { PanelContentType, type BulletPoint, type IconCard, type TextOnlyContent } from "../../types";
 import { PanelContent } from "./PanelContent";
 
 export class TextPanelContent extends PanelContent {
@@ -8,6 +8,7 @@ export class TextPanelContent extends PanelContent {
   readonly body?: string;
   readonly bodyWhispered?: boolean;
   readonly bullets?: BulletPoint[];
+  readonly iconCards?: IconCard[];
 
   constructor(options: TextOnlyContent = {}) {
     super();
@@ -16,6 +17,7 @@ export class TextPanelContent extends PanelContent {
     this.body = options.body;
     this.bodyWhispered = options.bodyWhispered;
     this.bullets = options.bullets;
+    this.iconCards = options.iconCards;
   }
 
   toJSON(): Record<string, unknown> {
@@ -25,6 +27,7 @@ export class TextPanelContent extends PanelContent {
       subheader: this.subheader,
       body: this.body,
       bullets: this.bullets,
+      iconCards: this.iconCards,
     };
   }
 }

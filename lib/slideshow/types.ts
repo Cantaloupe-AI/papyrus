@@ -24,12 +24,19 @@ export type BulletPoint =
   | { text: string; style: BulletStyle.EMOJI; emoji: string }
   | { text: string; style: BulletStyle.LUCIDE; icon: string }
 
+export interface IconCard {
+  icon: string;
+  header: string;
+  body?: string;
+}
+
 export interface TextOnlyContent {
   header?: string;
   subheader?: string;
   body?: string;
   bodyWhispered?: boolean;
   bullets?: BulletPoint[];
+  iconCards?: IconCard[];
 }
 
 export type AnySlideConfig = TextOnlySlideConfig | SplitScreenSlideConfig;
