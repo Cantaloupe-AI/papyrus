@@ -1,4 +1,4 @@
-import type { Presentation } from "../types";
+import { BulletStyle, type Presentation } from "../types";
 import { SplitScreenSlideConfig } from "../configs/SplitScreenSlideConfig";
 import { TextOnlySlideConfig } from "../configs/TextOnlySlideConfig";
 import { TextPanelContent } from "../configs/panels/TextPanelContent";
@@ -38,18 +38,19 @@ export const tulum: Presentation = {
       leftPanel: new TextPanelContent({
         subheader: "Why look in Latin America?",
         bullets: [
-          { text: "Affordable cost of living", emoji: "💰" },
-          { text: "Mountains, beaches and nature", emoji: "🏖️" },
-          { text: "Rich culture and food", emoji: "🌮" },
+          { text: "Affordable cost of living", style: BulletStyle.EMOJI, emoji: "💰" },
+          { text: "Mountains, beaches and nature", style: BulletStyle.EMOJI, emoji: "🏖️" },
+          { text: "Rich culture and food", style: BulletStyle.EMOJI, emoji: "🌮" },
           {
             text: "More stable than the US (depending on the country)",
+            style: BulletStyle.EMOJI,
             emoji: "🏛️",
           },
-          { text: "Relatively quick flight back home", emoji: "✈️" },
+          { text: "Relatively quick flight back home", style: BulletStyle.EMOJI, emoji: "✈️" },
         ],
       }),
       rightPanel: new PhotoPanelContent({
-        src: "/tulum/plane.png",
+        src: "/tulum/plane.jpg",
         alt: "Airplane",
       }),
     }),
@@ -57,11 +58,11 @@ export const tulum: Presentation = {
     // 4. Beautiful nature
     new SplitScreenSlideConfig({
       leftPanel: new PhotoPanelContent({
-        src: "/tulum/beach panorama.png",
+        src: "/tulum/beach panorama.jpg",
         alt: "Beach panorama",
       }),
       rightPanel: new PhotoPanelContent({
-        src: "/tulum/iguana.png",
+        src: "/tulum/iguana.jpg",
         alt: "Iguana",
       }),
     }),
@@ -69,11 +70,11 @@ export const tulum: Presentation = {
     // 5. Amazing food
     new SplitScreenSlideConfig({
       leftPanel: new PhotoPanelContent({
-        src: "/tulum/leaf wrapped buritto.png",
+        src: "/tulum/leaf wrapped buritto.jpg",
         alt: "Leaf wrapped burrito",
       }),
       rightPanel: new PhotoPanelContent({
-        src: "/tulum/taco meat roasting.png",
+        src: "/tulum/taco meat roasting.jpg",
         alt: "Taco meat roasting",
       }),
     }),
@@ -85,7 +86,7 @@ export const tulum: Presentation = {
         subheader: "Colombia Tomorrow",
       }),
       rightPanel: new PhotoPanelContent({
-        src: "/tulum/mexican flag.png",
+        src: "/tulum/mexican flag.jpg",
         alt: "Mexican flag",
       }),
     }),
@@ -97,15 +98,16 @@ export const tulum: Presentation = {
         bullets: [
           {
             text: "Some of the Americas' finest cities are in Latin America, like CDMX/Mexico City (pop. ~22.8M) and Medell\u00edn — the city of eternal spring and a major hub in Colombia",
+            style: BulletStyle.EMOJI,
             emoji: "🏙️",
           },
-          { text: "World-class restaurants and nightlife", emoji: "🍽️" },
-          { text: "Fast, reliable internet and coworking spaces", emoji: "💻" },
-          { text: "Modern transit systems and infrastructure", emoji: "🚇" },
+          { text: "World-class restaurants and nightlife", style: BulletStyle.EMOJI, emoji: "🍽️" },
+          { text: "Fast, reliable internet and coworking spaces", style: BulletStyle.EMOJI, emoji: "💻" },
+          { text: "Modern transit systems and infrastructure", style: BulletStyle.EMOJI, emoji: "🚇" },
         ],
       }),
       rightPanel: new PhotoPanelContent({
-        src: "/tulum/coffee shop modern.png",
+        src: "/tulum/coffee shop modern.jpg",
         alt: "Modern coffee shop",
       }),
     }),
@@ -115,17 +117,17 @@ export const tulum: Presentation = {
       header: "Cost of Living is Low",
       subheader: "Average monthly income (GDP per capita / 12)",
       bullets: [
-        { text: "Mexico — $1,259/mo", emoji: "🇲🇽" },
-        { text: "Colombia — $720/mo", emoji: "🇨🇴" },
-        { text: "Guatemala — $571/mo", emoji: "🇬🇹" },
-        { text: "Bolivia — $382/mo", emoji: "🇧🇴" },
+        { text: "Mexico — $1,259/mo", style: BulletStyle.EMOJI, emoji: "🇲🇽" },
+        { text: "Colombia — $720/mo", style: BulletStyle.EMOJI, emoji: "🇨🇴" },
+        { text: "Guatemala — $571/mo", style: BulletStyle.EMOJI, emoji: "🇬🇹" },
+        { text: "Bolivia — $382/mo", style: BulletStyle.EMOJI, emoji: "🇧🇴" },
       ],
     }),
 
     // 9. Me on a beach
     new SplitScreenSlideConfig({
       leftPanel: new PhotoPanelContent({
-        src: "/tulum/me on beach.png",
+        src: "/tulum/me on beach.jpg",
         alt: "Me on a beach",
       }),
       rightPanel: new TextPanelContent({
