@@ -1,0 +1,33 @@
+import { SlideType, type TextOnlyContent } from "../types";
+import { SlideConfig } from "./SlideConfig";
+
+interface TextOnlySlideOptions extends TextOnlyContent {
+  backgroundColor?: string;
+  notes?: string;
+}
+
+export class TextOnlySlideConfig extends SlideConfig {
+  readonly type = SlideType.TEXT_ONLY as const;
+  readonly header?: string;
+  readonly subheader?: string;
+  readonly body?: string;
+
+  constructor(options: TextOnlySlideOptions = {}) {
+    super({ backgroundColor: options.backgroundColor, notes: options.notes });
+    this.header = options.header;
+    this.subheader = options.subheader;
+    this.body = options.body;
+  }
+
+  toJSON(): Record<string, unknown> {
+    return {
+      type: this.type,
+      id: this.id,
+      backgroundColor: this.backgroundColor,
+      notes: this.notes,
+      header: this.header,
+      subheader: this.subheader,
+      body: this.body,
+    };
+  }
+}
