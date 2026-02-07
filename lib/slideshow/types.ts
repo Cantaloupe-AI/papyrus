@@ -22,3 +22,10 @@ export interface TextOnlyContent {
 export type AnySlideConfig = TextOnlySlideConfig | SplitScreenSlideConfig;
 
 export type AnyPanelContent = TextPanelContent | PhotoPanelContent;
+
+export interface Presentation {
+  id: string;
+  title: string;
+  description: string;
+  slides: AnySlideConfig[];
+}
