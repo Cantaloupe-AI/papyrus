@@ -18,9 +18,19 @@ export function TextPanel({ content }: TextPanelProps) {
         </h3>
       )}
       {content.body && (
-        <p className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <p className={content.bodyWhispered ? "text-base italic text-zinc-400 dark:text-zinc-500" : "text-lg leading-relaxed text-zinc-700 dark:text-zinc-300"}>
           {content.body}
         </p>
+      )}
+      {content.bullets && content.bullets.length > 0 && (
+        <ul className={`mt-4 space-y-2 text-lg text-zinc-700 dark:text-zinc-300 ${content.bullets.some((b) => b.emoji) ? "list-none" : "list-disc pl-6"}`}>
+          {content.bullets.map((bullet, i) => (
+            <li key={i}>
+              {bullet.emoji ? <span className="mr-2">{bullet.emoji}</span> : null}
+              {bullet.text}
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

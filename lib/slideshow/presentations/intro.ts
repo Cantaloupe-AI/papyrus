@@ -22,7 +22,7 @@ export const intro: Presentation = {
       rightPanel: new PhotoPanelContent({
         src: "/globe.svg",
         alt: "Globe illustration",
-        objectFit: "contain",
+        objectFit: "object-contain",
       }),
     }),
   ],

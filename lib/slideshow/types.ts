@@ -13,10 +13,17 @@ export enum PanelContentType {
   PHOTO = "PHOTO",
 }
 
+export interface BulletPoint {
+  text: string;
+  emoji?: string;
+}
+
 export interface TextOnlyContent {
   header?: string;
   subheader?: string;
   body?: string;
+  bodyWhispered?: boolean;
+  bullets?: BulletPoint[];
 }
 
 export type AnySlideConfig = TextOnlySlideConfig | SplitScreenSlideConfig;

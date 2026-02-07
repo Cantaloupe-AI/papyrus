@@ -12,7 +12,7 @@ export function PhotoPanel({ content }: PhotoPanelProps) {
         src={content.src}
         alt={content.alt}
         fill
-        style={{ objectFit: content.objectFit }}
+        className={content.objectFit}
       />
     </div>
   );

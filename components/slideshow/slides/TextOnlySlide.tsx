@@ -18,9 +18,19 @@ export function TextOnlySlide({ config }: TextOnlySlideProps) {
         </h3>
       )}
       {config.body && (
-        <p className="max-w-2xl text-xl leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <p className={config.bodyWhispered ? "max-w-2xl text-lg italic text-zinc-400 dark:text-zinc-500" : "max-w-2xl text-xl leading-relaxed text-zinc-700 dark:text-zinc-300"}>
           {config.body}
         </p>
+      )}
+      {config.bullets && config.bullets.length > 0 && (
+        <ul className={`mt-6 max-w-2xl space-y-3 text-xl text-zinc-700 dark:text-zinc-300 ${config.bullets.some((b) => b.emoji) ? "list-none" : "list-disc pl-6"}`}>
+          {config.bullets.map((bullet, i) => (
+            <li key={i}>
+              {bullet.emoji ? <span className="mr-2">{bullet.emoji}</span> : null}
+              {bullet.text}
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
