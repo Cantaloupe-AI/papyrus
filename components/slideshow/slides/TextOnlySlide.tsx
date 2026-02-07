@@ -1,4 +1,5 @@
 import type { TextOnlySlideConfig } from "@/lib/slideshow/configs/TextOnlySlideConfig";
+import { BulletList } from "@/components/slideshow/BulletList";
 
 interface TextOnlySlideProps {
   config: TextOnlySlideConfig;
@@ -23,14 +24,10 @@ export function TextOnlySlide({ config }: TextOnlySlideProps) {
         </p>
       )}
       {config.bullets && config.bullets.length > 0 && (
-        <ul className={`mt-6 max-w-2xl space-y-3 text-xl text-zinc-700 dark:text-zinc-300 ${config.bullets.some((b) => b.emoji) ? "list-none" : "list-disc pl-6"}`}>
-          {config.bullets.map((bullet, i) => (
-            <li key={i}>
-              {bullet.emoji ? <span className="mr-2">{bullet.emoji}</span> : null}
-              {bullet.text}
-            </li>
-          ))}
-        </ul>
+        <BulletList
+          bullets={config.bullets}
+          className="mt-6 max-w-2xl space-y-3 text-xl text-zinc-700 dark:text-zinc-300"
+        />
       )}
     </div>
   );

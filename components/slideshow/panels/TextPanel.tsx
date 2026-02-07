@@ -1,4 +1,5 @@
 import type { TextPanelContent } from "@/lib/slideshow/configs/panels/TextPanelContent";
+import { BulletList } from "@/components/slideshow/BulletList";
 
 interface TextPanelProps {
   content: TextPanelContent;
@@ -23,14 +24,10 @@ export function TextPanel({ content }: TextPanelProps) {
         </p>
       )}
       {content.bullets && content.bullets.length > 0 && (
-        <ul className={`mt-4 space-y-2 text-lg text-zinc-700 dark:text-zinc-300 ${content.bullets.some((b) => b.emoji) ? "list-none" : "list-disc pl-6"}`}>
-          {content.bullets.map((bullet, i) => (
-            <li key={i}>
-              {bullet.emoji ? <span className="mr-2">{bullet.emoji}</span> : null}
-              {bullet.text}
-            </li>
-          ))}
-        </ul>
+        <BulletList
+          bullets={content.bullets}
+          className="mt-4 space-y-2 text-lg text-zinc-700 dark:text-zinc-300"
+        />
       )}
     </div>
   );

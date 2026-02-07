@@ -13,10 +13,16 @@ export enum PanelContentType {
   PHOTO = "PHOTO",
 }
 
-export interface BulletPoint {
-  text: string;
-  emoji?: string;
+export enum BulletStyle {
+  DEFAULT = "DEFAULT",
+  EMOJI = "EMOJI",
+  LUCIDE = "LUCIDE",
 }
+
+export type BulletPoint =
+  | { text: string; style?: BulletStyle.DEFAULT }
+  | { text: string; style: BulletStyle.EMOJI; emoji: string }
+  | { text: string; style: BulletStyle.LUCIDE; icon: string }
 
 export interface TextOnlyContent {
   header?: string;
